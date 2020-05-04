@@ -6,6 +6,7 @@ import (
 
 const (
 	MarketFxBestOffersPath   = "/api/v2.0.0/market_fx/best_offers"
+	MarketFxOrdersPath       = "/api/v2.0.0/market_fx/orders"
 	MarketFxOrdersActivePath = "/api/v2.0.0/market_fx/orders/active"
 )
 
@@ -25,6 +26,15 @@ type MarketFxBestOffers struct {
 			Volume                  json.Number `json:"volume"`
 			ValueInOppositeCurrency json.Number `json:"valueInOppositeCurrency"`
 		}
+	}
+}
+
+type MarketFxOrders struct {
+	Success bool `json:"success"`
+	Errors  []Error
+	Result  []struct {
+		OrderId string `json:"orderId"`
+		// Add remaining
 	}
 }
 
