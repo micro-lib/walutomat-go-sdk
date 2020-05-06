@@ -21,13 +21,13 @@ type MarketFxBestOffers struct {
 			Price                   json.Number `json:"price"`
 			Volume                  json.Number `json:"volume"`
 			ValueInOppositeCurrency json.Number `json:"valueInOppositeCurrency"`
-		}
+		} `json:"bids"`
 		Asks []struct {
 			Price                   json.Number `json:"price"`
 			Volume                  json.Number `json:"volume"`
 			ValueInOppositeCurrency json.Number `json:"valueInOppositeCurrency"`
-		}
-	}
+		} `json:"asks"`
+	} `json:"result"`
 }
 
 type MarketFxOrders struct {
@@ -51,7 +51,7 @@ type MarketFxOrders struct {
 		CommissionAmount   string `json:"commissionAmount"`
 		CommissionCurrency string `json:"commissionCurrency"`
 		CommissionRate     string `json:"commissionRate"`
-	}
+	} `json:"result"`
 }
 
 type MarketFxOrdersActive struct {
@@ -85,7 +85,7 @@ type MarketFxOrdersResponse struct {
 	Duplicate bool `json:"duplicate"`
 	Result    struct {
 		OrderId string `json:"orderId"`
-	}
+	} `json:"result"`
 }
 
 type MarketFxOrdersCloseResponse struct {
@@ -110,5 +110,5 @@ type MarketFxOrdersCloseResponse struct {
 		CommissionAmount   string `json:"commissionAmount"`
 		CommissionCurrency string `json:"commissionCurrency"`
 		CommissionRate     string `json:"commissionRate"`
-	}
+	} `json:"result"`
 }

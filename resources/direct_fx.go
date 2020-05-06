@@ -17,7 +17,7 @@ type DirectFxRatesResponse struct {
 		CurrencyPair string      `json:"currencyPair"`
 		BuyRate      json.Number `json:"buyRate"`
 		SellRate     json.Number `json:"sellRate"`
-	}
+	} `json:"result"`
 }
 
 type DirectFxExchangesResponse struct {
@@ -26,5 +26,5 @@ type DirectFxExchangesResponse struct {
 	Errors    []Error
 	Result    struct {
 		ExchangeId string `json:"exchangeId"`
-	}
+	} `json:"result"`
 }

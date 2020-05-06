@@ -17,7 +17,7 @@ type AccountBalancesResponse struct {
 		BalanceTotal     json.Number `json:"balanceTotal"`
 		BalanceAvailable json.Number `json:"balanceAvailable"`
 		BalanceReserved  json.Number `json:"balanceReserved"`
-	}
+	} `json:"result"`
 }
 
 type AccountHistoryResponse struct {
@@ -36,5 +36,5 @@ type AccountHistoryResponse struct {
 		OperationType         string `json:"operationType"`
 		OperationDetailedType string `json:"operationDetailedType"`
 		SubmitId              string `json:"submitId"`
-	}
+	} `json:"result"`
 }
