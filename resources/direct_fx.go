@@ -21,10 +21,9 @@ type DirectFxRatesResponse struct {
 }
 
 type DirectFxExchangesResponse struct {
-	Success   bool `json:"success"`
-	Duplicate bool `json:"success"`
-	Errors    []Error
-	Result    struct {
+	Success bool `json:"success"`
+	Errors  []Error
+	Result  struct {
 		ExchangeId string `json:"exchangeId"`
 	} `json:"result"`
 }
