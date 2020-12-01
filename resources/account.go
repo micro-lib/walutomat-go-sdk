@@ -2,6 +2,7 @@ package resources
 
 import (
 	"encoding/json"
+	"github.com/micro-lib/walutomat-go-sdk"
 )
 
 const (
@@ -32,9 +33,9 @@ type AccountHistoryResponse struct {
 			Key   string `json:"key"`
 			Value string `json:"value"`
 		}
-		Currency              string `json:"currency"`
-		OperationType         string `json:"operationType"`
-		OperationDetailedType string `json:"operationDetailedType"`
-		SubmitId              string `json:"submitId"`
+		Currency              string                  `json:"currency"`
+		OperationType         walutomat.OperationType `json:"operationType"`
+		OperationDetailedType string                  `json:"operationDetailedType"`
+		SubmitId              string                  `json:"submitId"`
 	} `json:"result"`
 }
