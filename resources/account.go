@@ -2,7 +2,7 @@ package resources
 
 import (
 	"encoding/json"
-	"github.com/micro-lib/walutomat-go-sdk"
+	"github.com/micro-lib/walutomat-go-sdk/types"
 )
 
 const (
@@ -33,9 +33,38 @@ type AccountHistoryResponse struct {
 			Key   string `json:"key"`
 			Value string `json:"value"`
 		}
-		Currency              string                  `json:"currency"`
-		OperationType         walutomat.OperationType `json:"operationType"`
-		OperationDetailedType string                  `json:"operationDetailedType"`
-		SubmitId              string                  `json:"submitId"`
+		Currency              string              `json:"currency"`
+		OperationType         types.OperationType `json:"operationType"`
+		OperationDetailedType string              `json:"operationDetailedType"`
+		SubmitId              string              `json:"submitId"`
 	} `json:"result"`
+}
+
+type SortOrder string
+
+const (
+	SortAsc  SortOrder = "ASC"
+	SortDesc SortOrder = "DESC"
+)
+
+type AccountHistoryQuery struct {
+	Currencies    []types.Currency
+	OperationType types.OperationType
+	ItemLimit     int
+	ContinueFrom  int
+	SortOrder     SortOrder
+	DateFrom      string
+	DateTo        string
+}
+
+func NewAccountHistoryQueryWithDefaults() AccountHistoryQuery {
+	return AccountHistoryQuery{
+		Currencies:    nil,
+		OperationType: "",
+		ItemLimit:     200,
+		ContinueFrom:  0,
+		SortOrder:     SortAsc,
+		DateFrom:      "",
+		DateTo:        "",
+	}
 }

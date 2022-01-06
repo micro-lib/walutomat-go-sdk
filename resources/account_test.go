@@ -2,7 +2,7 @@ package resources
 
 import (
 	"encoding/json"
-	"github.com/micro-lib/walutomat-go-sdk"
+	"github.com/micro-lib/walutomat-go-sdk/types"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -89,10 +89,10 @@ func TestAccountHistory(t *testing.T) {
 				Key   string `json:"key"`
 				Value string `json:"value"`
 			}
-			Currency              string                  `json:"currency"`
-			OperationType         walutomat.OperationType `json:"operationType"`
-			OperationDetailedType string                  `json:"operationDetailedType"`
-			SubmitId              string                  `json:"submitId"`
+			Currency              string              `json:"currency"`
+			OperationType         types.OperationType `json:"operationType"`
+			OperationDetailedType string              `json:"operationDetailedType"`
+			SubmitId              string              `json:"submitId"`
 		}{{
 			HistoryItemId:         51277549,
 			TransactionId:         "a4570b2b-23cf-4703-baf1-9b6361be267c",
@@ -100,7 +100,7 @@ func TestAccountHistory(t *testing.T) {
 			OperationAmount:       "-432.43 PLN",
 			BalanceAfter:          "-423.75 PLN",
 			Currency:              "PLN",
-			OperationType:         walutomat.DirectFX,
+			OperationType:         types.DirectFX,
 			OperationDetailedType: "DIRECT_FX",
 			OperationDetails: []struct {
 				Key   string `json:"key"`
@@ -126,7 +126,7 @@ func TestAccountHistory(t *testing.T) {
 			OperationAmount:       "-0.24 EUR",
 			BalanceAfter:          "105.09 EUR",
 			Currency:              "EUR",
-			OperationType:         walutomat.DirectFX,
+			OperationType:         types.DirectFX,
 			OperationDetailedType: "DIRECT_FX",
 			OperationDetails: []struct {
 				Key   string `json:"key"`

@@ -1,4 +1,4 @@
-package walutomat
+package types
 
 type CurrencyPair string
 
